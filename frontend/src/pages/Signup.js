@@ -80,16 +80,22 @@ const Signup = () => {
       document.querySelector(".fourth-slide").style.display = "none";
     }
 
-    await axios
-      .post("http://localhost:5050/users/sendmail", {
+    try {
+      const response = await axios.post("http://localhost:5050/users/sendmail", {
         email: email,
-      })
-      .then((res) => {
-        setOtp(res.data.otp);
-      })
-      .catch((err) => {
-        console.log(err);
       });
+      
+      if (response.data && response.data.otp) {
+        setOtp(response.data.otp);
+        alert("OTP sent successfully. Check your email.");
+      } else {
+        console.error("No OTP received in response");
+        alert("Error: Failed to send OTP");
+      }
+    } catch (err) {
+      console.error("Error sending OTP:", err);
+      alert("Failed to send OTP: " + (err.response?.data?.message || err.message));
+    }
   };
 
   const toggleThree = () => {

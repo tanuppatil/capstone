@@ -8,14 +8,14 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
 import SessionRoutes from "./routes/SessionRoutes.js";
 
-// Initialize the app
+// Initialize the app 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB;
 // Middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: ["http://localhost:3000", "http://localhost:5050"],
     credentials: true,
   })
 );

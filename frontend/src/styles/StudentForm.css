@@ -21,6 +21,16 @@
   width: 80%;
 }
 
+.error-message {
+  background-color: #ff5555;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 80%;
+}
+
 .cam-btn {
   width: 40%;
   border: none;
@@ -51,4 +61,10 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #393e46;
+}
+
+video, img {
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 2px solid #444;
 }

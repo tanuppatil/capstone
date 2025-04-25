@@ -1,56 +1,70 @@
-# Attendo
+# AttendMate
 
-Attendo is a MERN (MongoDB, Express.js, React.js, Node.js) stack application designed to simplify attendance tracking for teachers and students. With Attendo, teachers can easily create attendance sessions, specifying location radius preferences, which generate unique QR codes. Students can then scan these codes or use a provided URL to log in and mark their attendance. The application automatically fetches the student's location upon attendance submission, ensuring accuracy and security. 
+AttendMate is a MERN (MongoDB, Express.js, React.js, Node.js) stack application designed to simplify attendance tracking for teachers and students. With AttendMate, teachers can easily create attendance sessions, specifying location radius preferences, which generate unique QR codes. Students can then scan these codes or use a provided URL to log in and mark their attendance. The application automatically fetches the student's location upon attendance submission, ensuring accuracy and security.
 
 ## Features
 
 - **Session Creation**: Teachers can create attendance sessions with specified location radius preferences.
-- **Automatic Location Detection**: Attendo automatically detects the teacher's location to generate accurate attendance sessions.
+- **Automatic Location Detection**: AttendMate automatically detects the teacher's location to generate accurate attendance sessions.
 - **QR Code Generation**: Each attendance session generates a unique QR code for easy student access.
 - **Flexible Access**: Students can either scan the QR code or use the provided URL to access the attendance session.
-- **Secure Authentication**: Attendo uses JWT for authentication, hashing and salting user passwords for security.
-- **Email Verification**: Users are verified via OTP during registration to ensure valid email addresses.
-- **Forgot Password Functionality**: Users can reset their passwords using OTPs sent to their registered email addresses.
+- **Secure Authentication**: AttendMate uses JWT for authentication, hashing and salting user passwords for security.
+- **Integrated Database**: All session details and attendance records are stored in a MongoDB database for easy reference.
+- **User-friendly Interface**: Intuitive interface for both teachers and students.
 - **Dashboard for Teachers and Students**: Teachers have a dashboard to manage sessions and view attendance details, while students can view their attendance records and session details.
+- **Location Validation**: Built-in location validation to ensure students are physically present in the class before they can mark their attendance.
+- **Export and Analysis**: Tools to export attendance data for further analysis or record-keeping.
 
-## Technologies Used
+## Getting Started
 
-- **Frontend**: React.js
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Image Storage**: Cloudinary
+### Prerequisites
 
-## Installation
+- Node.js v16 or above
+- MongoDB account
+- npm or yarn
 
-To run Attendo locally, follow these steps:
+### Installation and Setup
 
-1. Clone this repository.
-2. Navigate to the `server` directory and run `npm install` to install server dependencies.
-3. Navigate to the `client` directory and run `npm install` to install client dependencies.
-4. Set up a MongoDB database and configure the connection in `server/config/db.js`.
-5. Set up Cloudinary for image storage and configure the connection in `server/config/cloudinary.js`.
-6. In the `server/config/keys.js` file, set up your JWT secret key.
-7. Run `npm start` in both the `server` and `client` directories to start the application.
+To run AttendMate locally, follow these steps:
 
-## Usage
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the server dependencies:
+```bash
+cd server
+npm install
+```
+4. Install the client dependencies:
+```bash
+cd ../client
+npm install
+```
+5. Start the development server:
+```bash
+npm start
+```
 
-1. **Teacher**: 
-   - Log in to your account as a teacher.
-   - Navigate to the dashboard and create a new attendance session.
-   - Specify the location radius and other session details.
-   - Generate the QR code and share it with your students.
-   - View attendance details and student submissions on the dashboard.
+### Usage
 
-2. **Student**:
-   - Log in to your account as a student.
-   - Access the attendance session by scanning the QR code or using the provided URL.
-   - Click your photo and enter your Roll.no.
-   - Submit your attendance, which includes automatic location detection.
-   - View your attendance records and session details on the dashboard.
+#### For Teachers
+
+- After creating an account and logging in, you'll be directed to your dashboard.
+- Navigate to the dashboard and create a new attendance session.
+- Specify the parameters for the session such as class name, time, and distance parameter for attendance.
+- Once the session is created, students can access it using the generated QR code or URL.
+- View attendance details and student submissions on the dashboard.
+
+#### For Students
+
+- Create an account or log in to the application.
+- Access the attendance session by scanning the QR code or using the provided URL.
+- Enter your roll number and take a picture for attendance verification.
+- Submit your attendance, which includes automatic location detection.
+- View your attendance records and session details on the dashboard.
 
 ## Deployment
 
-The application is deployed and accessible at [Attendo Deploy](https://atendo-deploy.onrender.com).
+The application is deployed and accessible at [AttendMate Deploy](https://attendmate-deploy.onrender.com).
 
 
 ## Contact
